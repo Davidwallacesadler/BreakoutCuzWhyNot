@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://by6vupx1cfpa1"]
+[gd_scene load_steps=7 format=3 uid="uid://by6vupx1cfpa1"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_bl3jc"]
 [ext_resource type="PackedScene" uid="uid://cbcjbb2wcfj6y" path="res://scenes/player.tscn" id="2_nagxg"]
 [ext_resource type="PackedScene" uid="uid://clvbno4658shj" path="res://scenes/ball.tscn" id="3_0pkak"]
+[ext_resource type="PackedScene" uid="uid://b0kfe6aobu7la" path="res://scenes/brick.tscn" id="4_1rro8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pum3u"]
 size = Vector2(120, 647)
@@ -17,9 +18,6 @@ ball = NodePath("Ball")
 
 [node name="Player" parent="." instance=ExtResource("2_nagxg")]
 position = Vector2(572, 529)
-
-[node name="Ball" parent="." instance=ExtResource("3_0pkak")]
-position = Vector2(566, 415)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2(0, 324)
@@ -50,3 +48,9 @@ metadata/_edit_lock_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("RectangleShape2D_pum3u")
+
+[node name="brick" parent="." instance=ExtResource("4_1rro8")]
+position = Vector2(221, 336)
+
+[node name="Ball" parent="." instance=ExtResource("3_0pkak")]
+position = Vector2(538, 390)

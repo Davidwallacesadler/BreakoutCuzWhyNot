@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://clvbno4658shj"]
+[gd_scene load_steps=4 format=3 uid="uid://clvbno4658shj"]
+
+[ext_resource type="Script" path="res://scripts/ball.gd" id="1_x62xo"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qp1kv"]
 friction = 0.0
@@ -16,6 +18,7 @@ max_contacts_reported = 1
 contact_monitor = true
 lock_rotation = true
 linear_damp_mode = 1
+script = ExtResource("1_x62xo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_thvu5")
