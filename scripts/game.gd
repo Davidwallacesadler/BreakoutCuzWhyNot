@@ -12,5 +12,5 @@ func _on_brick_hit() -> void:
 	print("Brick hit")
 
 func _serve_ball() -> void:
-	ball.apply_impulse(Vector2(-100, -300))
+	ball.apply_impulse(Vector2(100, -300))
 	

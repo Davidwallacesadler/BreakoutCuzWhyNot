@@ -9,8 +9,6 @@ class_name Brick extends StaticBody2D
 @export var sprite: Sprite2D
 @export var collision_shape: CollisionShape2D
 
-func _ready():
-	setup()
 
 func setup():
 	# Scale sprite

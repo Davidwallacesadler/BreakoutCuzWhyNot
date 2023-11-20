@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://7bdb3q5in1u6"]
+
+[ext_resource type="Script" path="res://scripts/brick_row.gd" id="1_a3ku5"]
+
+[node name="BrickRow" type="Node2D"]
+script = ExtResource("1_a3ku5")
