@@ -9,6 +9,10 @@ extends Node
 const _brick_scene = preload("res://scenes/brick.tscn")
 
 func _ready():
+	_setup()
+	
+
+func _setup() -> void:
 	var total_spacing = spacing * (count - 1)
 	var total_brick_width = width - total_spacing
 	var single_brick_width = total_brick_width / count
@@ -17,15 +21,13 @@ func _ready():
 	
 	for i in count:
 		var new_brick = _brick_scene.instantiate()
+		
 		new_brick.width = single_brick_width
 		new_brick.height = height
-		new_brick.setup()
+		new_brick.color = brick_color
+		
 		add_child(new_brick)
+		
 		new_brick.position = current_brick_position
-		current_brick_position += Vector2(single_brick_width + spacing, 0)
+		current_brick_position.x += single_brick_width + spacing
 	
-	
-	
-	
-	
-

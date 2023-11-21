@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_bl3jc"]
 [ext_resource type="PackedScene" uid="uid://cbcjbb2wcfj6y" path="res://scenes/player.tscn" id="2_nagxg"]
+[ext_resource type="PackedScene" uid="uid://dnkwh07bdqhg3" path="res://scenes/brick_grid.tscn" id="2_p74wp"]
 [ext_resource type="PackedScene" uid="uid://clvbno4658shj" path="res://scenes/ball.tscn" id="3_0pkak"]
-[ext_resource type="PackedScene" uid="uid://7bdb3q5in1u6" path="res://scenes/brick_row.tscn" id="4_48qyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pum3u"]
 size = Vector2(120, 647)
@@ -16,8 +16,11 @@ script = ExtResource("1_bl3jc")
 player = NodePath("Player")
 ball = NodePath("Ball")
 
+[node name="brick_grid" parent="." instance=ExtResource("2_p74wp")]
+position = Vector2(154, 144)
+
 [node name="Player" parent="." instance=ExtResource("2_nagxg")]
-position = Vector2(572, 529)
+position = Vector2(579, 588)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2(0, 324)
@@ -50,10 +53,4 @@ metadata/_edit_lock_ = true
 shape = SubResource("RectangleShape2D_pum3u")
 
 [node name="Ball" parent="." instance=ExtResource("3_0pkak")]
-position = Vector2(538, 390)
-
-[node name="BrickRow" parent="." instance=ExtResource("4_48qyc")]
-position = Vector2(254, 162)
-
-[node name="BrickRow2" parent="." instance=ExtResource("4_48qyc")]
-position = Vector2(253, 282)
+position = Vector2(579, 510)

@@ -2,13 +2,14 @@ class_name Brick extends StaticBody2D
 
 @export var color: BrickColor = BrickColor.RED
 
-# Maybe make static? They are all the same...
 @export var width: float = 200
 @export var height: float = 100
 
 @export var sprite: Sprite2D
 @export var collision_shape: CollisionShape2D
 
+func _ready():
+	setup()
 
 func setup():
 	# Scale sprite
