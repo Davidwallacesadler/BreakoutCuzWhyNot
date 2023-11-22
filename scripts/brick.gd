@@ -8,10 +8,12 @@ class_name Brick extends StaticBody2D
 @export var sprite: Sprite2D
 @export var collision_shape: CollisionShape2D
 
-func _ready():
-	setup()
+const shader = preload("res://assets/color.gdshader")
 
-func setup():
+func _ready():
+	_setup()
+
+func _setup():
 	# Scale sprite
 	var sprite_scale_factor = _get_sprite_scale_factor(width, height)
 	sprite.scale *= sprite_scale_factor
@@ -20,6 +22,26 @@ func setup():
 	collision_shape.shape = RectangleShape2D.new()
 	collision_shape.shape.size.x = width
 	collision_shape.shape.size.y = height
+	
+	var brick_color = Vector3.ONE
+	match (color):
+		BrickColor.RED:
+			brick_color = Vector3(1, 0.25, 0.25)
+		BrickColor.YELLOW:
+			brick_color = Vector3(0.9, 0.7, 0.05)
+		BrickColor.GREEN:
+			brick_color = Vector3(0.07, 0.9, 0.15)
+		BrickColor.BLUE:
+			brick_color = Vector3(0.07, 0.15, 0.9)
+		BrickColor.VIOLET:
+			brick_color = Vector3(0.65, 0.15, 0.9)
+	
+	var material = ShaderMaterial.new()
+	material.shader = shader
+	material.set_shader_parameter("color", brick_color)
+	sprite.material = material
+	
+	
 	
 
 func hit() -> void:

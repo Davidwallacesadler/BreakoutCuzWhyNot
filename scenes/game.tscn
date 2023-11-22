@@ -18,9 +18,13 @@ ball = NodePath("Ball")
 
 [node name="brick_grid" parent="." instance=ExtResource("2_p74wp")]
 position = Vector2(154, 144)
+height = 300.0
 
 [node name="Player" parent="." instance=ExtResource("2_nagxg")]
 position = Vector2(579, 588)
+
+[node name="Ball" parent="." instance=ExtResource("3_0pkak")]
+position = Vector2(579, 510)
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
 position = Vector2(0, 324)
@@ -52,5 +56,21 @@ metadata/_edit_lock_ = true
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 shape = SubResource("RectangleShape2D_pum3u")
 
-[node name="Ball" parent="." instance=ExtResource("3_0pkak")]
-position = Vector2(579, 510)
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 1097.0
+offset_top = 35.0
+offset_right = 1120.0
+offset_bottom = 661.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 35.0
+offset_top = 32.0
+offset_right = 58.0
+offset_bottom = 658.0
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1120.0
+offset_top = 32.0
+offset_right = 1143.0
+offset_bottom = 1117.0
+rotation = 1.5708

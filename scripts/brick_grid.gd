@@ -27,6 +27,7 @@ func _setup() -> void:
 		brick_row.height = single_row_height
 		brick_row.count = items_per_row
 		brick_row.spacing = item_spacing
+		brick_row.brick_color = i
 		
 		add_child(brick_row)
 		
