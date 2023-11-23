@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdmnsnrdhtjfi"]
+
+[ext_resource type="Script" path="res://scripts/ball_test_stage.gd" id="1_53lhf"]
+[ext_resource type="PackedScene" uid="uid://7bdb3q5in1u6" path="res://scenes/brick_row.tscn" id="2_ycrqm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dayw4"]
+radius = 16.0312
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dprig"]
+size = Vector2(1251, 148)
+
+[node name="BallTestStage" type="Node2D" node_paths=PackedStringArray("ball", "left_wall", "top_wall", "right_wall", "bottom_wall", "debug_label")]
+script = ExtResource("1_53lhf")
+ball = NodePath("Ball")
+left_wall = NodePath("LeftWall")
+top_wall = NodePath("TopWall")
+right_wall = NodePath("RightWall")
+bottom_wall = NodePath("BottomWall")
+debug_label = NodePath("DebugLabel")
+
+[node name="Ball" type="Area2D" parent="."]
+position = Vector2(567, 431)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ball"]
+shape = SubResource("CircleShape2D_dayw4")
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2(-80, -235)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2(557.5, -58)
+shape = SubResource("RectangleShape2D_dprig")
+
+[node name="TopWall" type="StaticBody2D" parent="."]
+position = Vector2(26, 33)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+position = Vector2(557.5, -58)
+shape = SubResource("RectangleShape2D_dprig")
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2(1113, -245)
+rotation = 1.5708
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2(557.5, -58)
+shape = SubResource("RectangleShape2D_dprig")
+
+[node name="BottomWall" type="StaticBody2D" parent="."]
+position = Vector2(4, 714)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
+position = Vector2(557.5, -58)
+shape = SubResource("RectangleShape2D_dprig")
+
+[node name="BrickRow" parent="." instance=ExtResource("2_ycrqm")]
+position = Vector2(170, 163)
+width = 800.0
+count = 10
+brick_color = 2
+
+[node name="DebugLabel" type="Label" parent="."]
+offset_left = 59.0
+offset_top = 48.0
+offset_right = 96.0
+offset_bottom = 74.0
+text = "Test"
