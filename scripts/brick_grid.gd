@@ -1,9 +1,9 @@
 extends Node
 
-@export var width: float = 950
+@export var width: float = 575
 @export var height: float = 250
 @export var items_per_row: int = 8
-@export var item_spacing: float = 16
+@export var item_spacing: float = 0
 @export var row_count: int = 5
 @export var row_spacing: float = 16
 

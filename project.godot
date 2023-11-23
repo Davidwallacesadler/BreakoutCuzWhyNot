@@ -21,6 +21,8 @@ GameEvents="*res://scripts/game_events.gd"
 
 [display]
 
+window/size/viewport_width=648
+window/size/viewport_height=1152
 window/stretch/mode="viewport"
 
 [rendering]
